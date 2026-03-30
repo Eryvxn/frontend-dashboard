@@ -1,0 +1,147 @@
+/* ═══════════════════════════════════════════════
+   GESTÃO PRO — DESIGN SYSTEM
+   Direção: SaaS moderno, dark sidebar + cream body
+   Fontes: Sora (UI) + Lora (display/números)
+   Acento: Esmeralda (#10b981)
+   ═══════════════════════════════════════════════ */
+
+:root {
+  /* ── Cores base ── */
+  --bg:           #f7f6f2;          /* creme suave */
+  --bg-card:      #ffffff;
+  --bg-card-alt:  #fafaf8;
+  --surface:      #f0efe9;
+
+  /* ── Sidebar dark ── */
+  --sidebar-bg:   #141412;
+  --sidebar-w:    240px;
+
+  /* ── Texto ── */
+  --text-primary:   #1a1916;
+  --text-secondary: #6b6960;
+  --text-muted:     #a8a59e;
+  --text-inverse:   #f7f6f2;
+
+  /* ── Acento esmeralda ── */
+  --emerald:        #10b981;
+  --emerald-dark:   #059669;
+  --emerald-light:  #d1fae5;
+  --emerald-dim:    rgba(16,185,129,.12);
+
+  /* ── Danger ── */
+  --rose:           #f43f5e;
+  --rose-light:     #ffe4e6;
+  --rose-dim:       rgba(244,63,94,.10);
+
+  /* ── Amber ── */
+  --amber:          #f59e0b;
+  --amber-light:    #fef3c7;
+  --amber-dim:      rgba(245,158,11,.10);
+
+  /* ── Bordas ── */
+  --border:         #e8e6df;
+  --border-strong:  #d4d0c8;
+
+  /* ── Sombras ── */
+  --shadow-xs: 0 1px 2px rgba(26,25,22,.04);
+  --shadow-sm: 0 2px 8px rgba(26,25,22,.06), 0 1px 2px rgba(26,25,22,.04);
+  --shadow-md: 0 8px 24px rgba(26,25,22,.08), 0 2px 6px rgba(26,25,22,.04);
+  --shadow-lg: 0 20px 60px rgba(26,25,22,.12), 0 4px 12px rgba(26,25,22,.06);
+  --shadow-emerald: 0 8px 24px rgba(16,185,129,.20);
+
+  /* ── Raios ── */
+  --r-sm:  6px;
+  --r-md:  12px;
+  --r-lg:  18px;
+  --r-xl:  24px;
+  --r-2xl: 32px;
+
+  /* ── Espaçamentos ── */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-8:  32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+
+  /* ── Fontes ── */
+  --font-ui:      'Sora', system-ui, sans-serif;
+  --font-display: 'Lora', Georgia, serif;
+
+  /* ── Easing ── */
+  --ease-spring: cubic-bezier(.34,1.56,.64,1);
+  --ease-out:    cubic-bezier(.16,1,.3,1);
+  --ease-in-out: cubic-bezier(.65,0,.35,1);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-ui);
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+::selection { background: var(--emerald); color: #fff; }
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ── Animações ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes shimmer {
+  from { background-position: -400px 0; }
+  to   { background-position: 400px 0; }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: .4; }
+}
+
+/* ── Utilitários de animação ── */
+.anim-fade-up  { animation: fadeUp  .45s var(--ease-out) both; }
+.anim-fade-in  { animation: fadeIn  .35s var(--ease-out) both; }
+.anim-scale-in { animation: scaleIn .35s var(--ease-spring) both; }
+
+.d-1 { animation-delay: .06s; }
+.d-2 { animation-delay: .12s; }
+.d-3 { animation-delay: .18s; }
+.d-4 { animation-delay: .24s; }
+.d-5 { animation-delay: .30s; }
+
+/* ── Skeleton loading ── */
+.skeleton {
+  background: linear-gradient(90deg, var(--surface) 25%, var(--border) 50%, var(--surface) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: var(--r-md);
+}

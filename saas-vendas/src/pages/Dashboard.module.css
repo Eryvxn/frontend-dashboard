@@ -1,0 +1,214 @@
+.page {
+  padding: 40px 48px;
+  max-width: 1140px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Header ── */
+.pageHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.pageTitle {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -.04em;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.pageSubtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.monthBadge {
+  padding: 6px 16px;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+  white-space: nowrap;
+  box-shadow: var(--shadow-xs);
+}
+
+/* ── Metrics grid ── */
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.metricCard {
+  background: var(--bg-card);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--border);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .22s, transform .22s var(--ease-out);
+}
+
+.metricCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.metricIcon {
+  width: 52px; height: 52px;
+  border-radius: var(--r-lg);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.metricIcon svg { width: 22px; height: 22px; }
+
+.metric--verde .metricIcon { background: var(--emerald-light); color: var(--emerald-dark); }
+.metric--rosa  .metricIcon { background: var(--rose-light);    color: var(--rose); }
+.metric--amber .metricIcon { background: var(--amber-light);   color: var(--amber); }
+
+.metricBody { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+
+.metricLabel {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--text-muted);
+}
+
+.metricValor {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -.03em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* ── Chart card ── */
+.chartCard, .tableCard {
+  background: var(--bg-card);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--border);
+  padding: 28px 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.chartHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.chartTitle {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -.02em;
+  margin-bottom: 4px;
+}
+
+.chartSub {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.chartWrap {
+  height: 280px;
+  position: relative;
+}
+
+.chartLoading, .chartEmpty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-muted);
+  font-size: 14px;
+  gap: 12px;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Summary table ── */
+.tableWrap { overflow-x: auto; }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table thead tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.table th {
+  padding: 10px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--text-muted);
+  text-align: left;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid var(--surface);
+  transition: background .15s;
+}
+
+.table tbody tr:last-child { border-bottom: none; }
+.table tbody tr:hover { background: var(--bg-card-alt); }
+
+.table td {
+  padding: 14px 16px;
+  color: var(--text-secondary);
+}
+
+.right { text-align: right; }
+.verde { color: var(--emerald-dark) !important; }
+.rosa  { color: var(--rose) !important; }
+
+.mesBadge {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.erroMsg {
+  grid-column: 1/-1;
+  padding: 20px;
+  background: var(--rose-dim);
+  border: 1px solid rgba(244,63,94,.2);
+  border-radius: var(--r-lg);
+  color: var(--rose);
+  font-size: 14px;
+}
+
+/* ── Responsivo ── */
+@media (max-width: 900px) {
+  .page { padding: 24px 20px; }
+  .metricsGrid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .metricsGrid { grid-template-columns: 1fr; }
+  .pageHeader   { flex-direction: column; align-items: flex-start; }
+  .chartCard, .tableCard { padding: 20px 16px; }
+}

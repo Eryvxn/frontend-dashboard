@@ -1,0 +1,262 @@
+/* ═══════════════════════════════
+   Transacao.module.css
+   Compartilhado por Vendas e Gastos
+   ═══════════════════════════════ */
+
+.page {
+  padding: 40px 48px;
+  max-width: 980px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Page header ── */
+.pageHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.pageTitle {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -.04em;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.pageSubtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ── Form card ── */
+.formCard {
+  background: var(--bg-card);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--border);
+  padding: 28px 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.formTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  letter-spacing: -.02em;
+}
+
+.formTitleIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.formTitleIcon svg { width: 16px; height: 16px; }
+
+.formTitleIcon--verde { background: var(--emerald-light); color: var(--emerald-dark); }
+.formTitleIcon--rosa  { background: var(--rose-light);    color: var(--rose); }
+
+.form { display: flex; flex-direction: column; gap: 20px; }
+
+.fields {
+  display: grid;
+  grid-template-columns: 180px 1fr 160px;
+  gap: 16px;
+  align-items: start;
+}
+
+.fieldWide { /* expandir no grid se necessário */ }
+
+.formAction { display: flex; justify-content: flex-end; }
+
+/* ── List section ── */
+.listSection { display: flex; flex-direction: column; gap: 16px; }
+
+.listHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.listTitle {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -.02em;
+  margin-bottom: 3px;
+}
+
+.listSub { font-size: 13px; color: var(--text-muted); }
+
+/* ── Table card ── */
+.tableCard {
+  background: var(--bg-card);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table thead tr {
+  background: var(--bg-card-alt);
+  border-bottom: 1px solid var(--border);
+}
+
+.table th {
+  padding: 12px 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--text-muted);
+  text-align: left;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid var(--surface);
+  transition: background .15s;
+}
+
+.table tbody tr:last-child { border-bottom: none; }
+.table tbody tr:hover { background: var(--bg-card-alt); }
+
+.table td {
+  padding: 15px 20px;
+  color: var(--text-secondary);
+  vertical-align: middle;
+}
+
+.right { text-align: right; }
+
+.dateBadge {
+  font-size: 13px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.descCell {
+  max-width: 360px;
+}
+
+.valorVenda {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--emerald-dark);
+  white-space: nowrap;
+}
+
+.valorGasto {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--rose);
+  white-space: nowrap;
+}
+
+.actionCell {
+  width: 48px;
+  text-align: center;
+}
+
+.deleteBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--r-sm);
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .18s, color .18s;
+  margin: 0 auto;
+}
+.deleteBtn svg      { width: 15px; height: 15px; }
+.deleteBtn:hover    { background: var(--rose-dim); color: var(--rose); }
+.deleteBtn:disabled { opacity: .4; cursor: not-allowed; }
+
+.miniSpinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--border);
+  border-top-color: var(--rose);
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Total row ── */
+.totalRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.totalValor {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.verde { color: var(--emerald-dark); }
+.rosa  { color: var(--rose); }
+
+/* ── Empty state ── */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 24px;
+  gap: 12px;
+  text-align: center;
+}
+
+.empty svg { width: 52px; height: 52px; color: var(--border-strong); margin-bottom: 4px; }
+.empty p   { font-size: 15px; font-weight: 600; color: var(--text-secondary); }
+.empty span { font-size: 13px; color: var(--text-muted); }
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .page   { padding: 24px 20px; }
+  .fields { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+  .fields      { grid-template-columns: 1fr; }
+  .listHeader  { flex-direction: column; }
+  .formCard    { padding: 20px 16px; }
+  .dateBadge   { display: none; }
+}

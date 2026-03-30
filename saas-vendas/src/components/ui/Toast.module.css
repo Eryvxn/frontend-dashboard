@@ -1,0 +1,58 @@
+.container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 360px;
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-lg);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  backdrop-filter: blur(12px);
+}
+
+.toast--success {
+  background: #0d1f19;
+  color: #6ee7b7;
+  border: 1px solid rgba(16,185,129,.2);
+}
+
+.toast--error {
+  background: #1f0d10;
+  color: #fda4af;
+  border: 1px solid rgba(244,63,94,.2);
+}
+
+.toast--warning {
+  background: #1f1a0d;
+  color: #fcd34d;
+  border: 1px solid rgba(245,158,11,.2);
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: flex;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.message {
+  flex: 1;
+}
