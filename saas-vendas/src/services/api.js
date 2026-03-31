@@ -4,7 +4,7 @@
  * Injeta automaticamente o Bearer token em rotas protegidas.
  */
 
-const BASE = 'https://backend-dashboard-91rp.onrender.com/api';
+const BASE = 'https://backend-dashboard-9lrp.onrender.com/api';
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
