@@ -62,7 +62,7 @@ export default function Sidebar({ page, setPage, usuario, onLogout }) {
       <header className={styles.topbar}>
         <div className={styles.topbarBrand}>
           <span className={styles.logoMark}>✦</span>
-          <span className={styles.logoText}>Gestão Pro</span>
+          <span className={styles.logoText}>Comércio Pro</span>
         </div>
         <button className={styles.menuBtn} onClick={() => setMobileOpen(v => !v)}>
           <IconMenu />
@@ -79,7 +79,7 @@ export default function Sidebar({ page, setPage, usuario, onLogout }) {
         {/* Brand */}
         <div className={styles.brand}>
           <span className={styles.logoMark}>✦</span>
-          {!collapsed && <span className={styles.logoText}>Gestão Pro</span>}
+          {!collapsed && <span className={styles.logoText}>Comércio Pro</span>}
           <button className={styles.collapseBtn} onClick={() => setCollapsed(v => !v)} title="Recolher menu">
             <IconChevron collapsed={collapsed} />
           </button>

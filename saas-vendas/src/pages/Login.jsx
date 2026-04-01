@@ -41,7 +41,7 @@ export default function Login({ onLogin }) {
           <div className={styles.logoWrap}>
             <span className={styles.logoMark}>✦</span>
           </div>
-          <h1 className={styles.title}>Bem-vindo de volta</h1>
+          <h1 className={styles.title}>Bem-vindo</h1>
           <p className={styles.subtitle}>Acesse sua conta para continuar</p>
         </div>
 
