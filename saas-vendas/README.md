@@ -1,4 +1,4 @@
-# ✦ Gestão Pro — Frontend SaaS React
+# ✦ Comércio Pro — Frontend React
 
 Dashboard de gestão para pequenos comércios. Visual profissional estilo SaaS, pronto para ser entregue a clientes reais.
 
